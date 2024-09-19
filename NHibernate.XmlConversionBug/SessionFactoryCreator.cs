@@ -25,7 +25,7 @@ public static class SessionFactoryCreator
     static HbmMapping GetMappingByCodeMappings()
     {
         var mapper = new ModelMapper();
-        mapper.AddMappings(new []{typeof(OrderMapping), typeof(LineItemMapping)});
+        mapper.AddMappings(new []{typeof(OrderMapping), typeof(LineItemMapping), typeof(LineItemDataMapping)});
         return mapper.CompileMappingForAllExplicitlyAddedEntities();
     }
 

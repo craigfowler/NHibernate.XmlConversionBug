@@ -9,4 +9,6 @@ public class LineItem
     public virtual string ItemName { get; set; }
     
     public virtual decimal Amount { get; set; }
+
+    public virtual LineItemData Data { get; set; }
 }

@@ -16,5 +16,7 @@ public class LineItemMapping : ClassMapping<LineItem>
         Property(x => x.Amount);
         
         ManyToOne(x => x.Order);
+        
+        ManyToOne(x => x.Data);
     }
 }
