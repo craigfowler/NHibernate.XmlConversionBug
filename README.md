@@ -1,6 +1,6 @@
 # NHibernate MBC to XML conversion crash bug
 
-Reproduction case for an NHibernate crash issue when converting Mapping By Code (MBC) mappings into XML, when those MBC mappings include any **One to one** mappings.
+Reproduction case [for an NHibernate crash issue](https://github.com/nhibernate/nhibernate-core/issues/3607) when converting Mapping By Code (MBC) mappings into XML, when those MBC mappings include any **One to one** mappings.
 The `optimistic-lock` element/attribute is incorrectly serialized to XML and subsequently causes an XML schema validation error.
 
 ## Versions affected
