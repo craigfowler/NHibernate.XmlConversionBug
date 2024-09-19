@@ -1,9 +1,21 @@
 # NHibernate MBC to XML conversion crash bug
 
-Reproduction case for an NHibernate crash issue when converting Mapping By Code (MBC) mappings into XML, when those MBC mappings include any `OneToOne` mappings.
+Reproduction case for an NHibernate crash issue when converting Mapping By Code (MBC) mappings into XML, when those MBC mappings include any **One to one** mappings.
 The `optimistic-lock` element/attribute is incorrectly serialized to XML and subsequently causes an XML schema validation error.
 
-## Reproduction steps
+## Versions affected
+
+I tried this out against a variety of NHibernate versions.
+
+* 5.3.7 is unaffected
+* 5.3.20 seems unaffected
+* 5.4.0 seems unaffected
+* 5.4.1 _reproduces the problem_
+* 5.5.0 _reproduces the problem_
+
+So, it would certainly seem that **5.4.1 is the first affected version**.
+
+## Sample reproduction case
 
 There are two unit tests in the test project.  One demonstrates the behavior using 'pure MBC' and the other uses the 'convert MBC mappings to XML' technique.
 The remainder of the project is a minimal NHibernate entity & mapping setup with 3 entities, mappings and a small helper to create a session factory for them.
@@ -13,6 +25,8 @@ As far as I can tell the DB driver/dialect is irrelevant though, because we repr
 1. Clone out the repository
 2. Build with .NET 8 or higher: `dotnet build`
 3. Run the unit tests: `dotnet test`
+    * Optional, to run the tests against a specific NHibernate version set the `NhVersion` property to the desired NHibernate version
+    * For example: `dotnet test /p:NhVersion=5.4.9`
 
 ### Expected behaviour
 
