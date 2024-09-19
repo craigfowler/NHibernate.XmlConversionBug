@@ -12,6 +12,7 @@ I tried this out against a variety of NHibernate versions.
 * 5.4.0 seems unaffected
 * 5.4.1 _reproduces the problem_
 * 5.5.0 _reproduces the problem_
+* _The problem is still present in 5.5.2_, which is the latest version at the time of writing
 
 So, it would certainly seem that **5.4.1 is the first affected version**.
 
