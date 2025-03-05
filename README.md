@@ -1,3 +1,7 @@
+Archived: The bug's fixed!
+
+---
+
 # NHibernate MBC to XML conversion crash bug
 
 Reproduction case [for an NHibernate crash issue](https://github.com/nhibernate/nhibernate-core/issues/3607) when converting Mapping By Code (MBC) mappings into XML, when those MBC mappings include any **One to one** mappings.
